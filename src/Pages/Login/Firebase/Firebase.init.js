@@ -4,3 +4,4 @@ const initializeFirebasae=()=>{
     initializeApp(firebaseConfig);
 }
 export default initializeFirebasae;
+//added the initialize
