@@ -1,10 +1,10 @@
-import React from 'react';
+import React ,{useState} from 'react';
 import Navigation from '../../Shared/Navigation/Navigation';
 import AvailableAppointment from '../AvailableAppointment/AvailableAppointment';
 import AppointmentHeader from './../AppointmentHeader/AppointmentHeader';
 
 const Appointment = () => {
-    const [date, setDate] = React.useState(new Date());
+    const [date, setDate] =useState(new Date());
     return (
         <div>
             <Navigation></Navigation>

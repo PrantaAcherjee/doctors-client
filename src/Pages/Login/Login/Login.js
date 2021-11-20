@@ -1,60 +1,75 @@
-import { Container, Grid, Typography,TextField, Button } from '@mui/material';
+import { Container, Typography, TextField, Button, CircularProgress, Alert } from '@mui/material';
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
-import login from "../../../images/login.png"
+import { Grid } from '@mui/material';
+import login from '../../../images/login.png'
+import { NavLink, useLocation, useHistory } from 'react-router-dom';
+import useAuth from './../../../Hooks/useAuth';
 
 const Login = () => {
-const [loginData,setLoginData]=useState({});
-const handleLoginSubmit=e=>{
-alert('submit boss')
-        e.preventDefault();
+    const [loginData, setLoginData] = useState({});
+    const { user, loginUser, isLoading, error ,signInWithGoogle} = useAuth();
+    const location= useLocation()
+    const history=useHistory();
+   
+
+    const handleOnChange = e => {
+        const field = e.target.name;
+        const value = e.target.value;
+        const newLoginData = { ...loginData };
+        newLoginData[field] = value;
+        setLoginData(newLoginData);
+    }
+    const handleLoginSubmit = e => {
+        loginUser(loginData.email, loginData.password,location,history);
+        e.preventDefault() ; 
+        
     }
 
-    const handleOnChange=e=>{
-        const field=e.target.name;
-        const value=e.target.value;
-        const newLoginData={...loginData}
-        newLoginData[field]=value;
-        setLoginData(newLoginData);
-        // console.log(field,value);
+    const handleGoogleSignIn=()=>{
+        signInWithGoogle(location,history)
     }
     return (
         <Container>
             <Grid container spacing={2}>
-                <Grid sx={{mt:10}} item xs={12} md={6}>
-                <Typography variant="h6" gutterBottom>
-                 Login
-                </Typography>
-               <form onSubmit={handleLoginSubmit}>
-               <TextField
-               style={{width:'75%',m:1}}
-                 label="Your E-mail"
-                 name="Email"
-                 onChange={handleOnChange}
-                variant="standard" />
-                <br />
-               <TextField
-               style={{width:'75%',m:1}}
-                 label="Your Password"
-                 name="password"
-                 onChange={handleOnChange}
-                variant="standard" 
-                type="password" />
-            
+                <Grid item sx={{ mt: 8 }} xs={12} md={6}>
+                    <Typography variant="body1" gutterBottom>Login</Typography>
+                   {!isLoading &&
+                        <form onSubmit={handleLoginSubmit}>
+                        <TextField
+                            sx={{ width: '75%', m: 1 }}
+                            id="standard-basic"
+                            label="Your Email"
+                            name="email"
+                            onChange={handleOnChange}
+                            variant="standard" />
+                        <TextField
+                            sx={{ width: '75%', m: 1 }}
+                            id="standard-basic"
+                            label="Your Password"
+                            type="password"
+                            name="password"
+                            onChange={handleOnChange}
+                            variant="standard" />
 
-                <Button variant="contained" type="submit" sx={{width:'75%',m:2}}>Login</Button>
-               </form>
+                         <Button sx={{ width: '75%', m: 1 }} type="submit" variant="contained">Login</Button>
+                        <NavLink
+                            style={{ textDecoration: 'none' }}
+                            to="/register">
+                            <Button variant="text">New User? Please Register</Button>
+                        </NavLink>
+               
+                        {user?.email && <Alert severity="success">Login successfully!</Alert>}
+                        {error && <Alert severity="error">{error}</Alert>}
+                    </form>
+                   }
+                    {isLoading && <CircularProgress />}
 
-               <NavLink
-            style={{textDecoration:'none'}}
-            to="/register">
-            <Button variant="text">
-                New USER? Please Register
-            </Button>
-            </NavLink>
-                </Grid>
-                <Grid item xs={4} md={6}>
-                    <img style={{width:'100%'}} src={login} alt="" />
+                    <p>------------------------------</p>
+                    <Button onClick={handleGoogleSignIn} variant="contained">Google signin</Button>
+                    </Grid>
+                    
+                    <Grid item xs={12} md={6}>
+                    <img style={{ width: '100%' }} src={login} alt="" />
                 </Grid>
             </Grid>
         </Container>

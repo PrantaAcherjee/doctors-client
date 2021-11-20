@@ -27,10 +27,11 @@ const Service = (props) => {
            {description}
            
         </Typography>
+        
       </CardContent>
       
-</Card>
-</Grid>
+        </Card>
+        </Grid>
         
     );
 };
