@@ -1,4 +1,4 @@
- import React from 'react';
+ import React,{useState} from 'react';
  import Backdrop from '@mui/material/Backdrop';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
@@ -19,15 +19,46 @@ const style = {
   boxShadow: 24,
   p: 4,
 };
-const BookingModal=({openBooking,handleBookingClose,booking,date}) => {
+const BookingModal=({openBooking,handleBookingClose,booking,date,setBookingSuccess}) => {
     const {name,time}=booking;
     const {user}=useAuth();
 
-    const handleBookingSubmit=e=>{
-        alert('sumitted your appointment');
-//collect data from form and send to the server
+    const initialInfo={patientName:user.displayName,email:user.email,phone:''} 
+    const [bookinInfo,setBookingInfo]=useState(initialInfo);
 
+    const handleOnBlur=e=>{
+    const field=e.target.name;
+    const value=e.target.value;
+    const newInfo={...bookinInfo};
+    newInfo[field]=value;
+    setBookingInfo(newInfo);
+    }
+
+  const handleBookingSubmit=e=>{
+    //alert('submitted your appointment');
+    //collect data
+    const appointment={
+    ...bookinInfo,
+    time,
+    serviceName:name,
+    date:date.toLocaleDateString()
+  }
+  //send data
+    fetch('http://localhost:5000/appointments',{
+    method:'POST',
+    headers:{
+      'content-type':'application/json'
+    },
+      body:JSON.stringify(appointment)
+    })
+    .then(res=>res.json())
+    .then(data=>{
+      // console.log(data);
+      if(data.insertedId){
+        setBookingSuccess(true);
         handleBookingClose();
+      }
+    })
         e.preventDefault();
     }
      return (
@@ -60,6 +91,8 @@ const BookingModal=({openBooking,handleBookingClose,booking,date}) => {
            
           sx={{width:'90%', m:1}}
           id="outlined-size-small"
+          name="patientName"
+          onBlur={handleOnBlur}
           defaultValue={user.displayName}
           size="small"
         />
@@ -67,6 +100,8 @@ const BookingModal=({openBooking,handleBookingClose,booking,date}) => {
            
           sx={{width:'90%', m:1}}
           id="outlined-size-small"
+          name="email"
+          onBlur={handleOnBlur}
           defaultValue={user.email}
           size="small"
         />
@@ -74,7 +109,10 @@ const BookingModal=({openBooking,handleBookingClose,booking,date}) => {
            
           sx={{width:'90%', m:1}}
           id="outlined-size-small"
-          defaultValue="Your Phone"
+          name="phone"
+          onBlur={handleOnBlur}
+          defaultValue=""
+          placeholder="Your Phone"
           size="small"
         />
         <TextField

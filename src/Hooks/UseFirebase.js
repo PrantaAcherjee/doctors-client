@@ -19,7 +19,6 @@ const UseFirebase = () => {
         const newUser={email,displayName:name};
         setUser(newUser);
           setError('')
-
           //send name to firebase after creation
           updateProfile(auth.currentUser, {
             displayName: name
@@ -58,13 +57,13 @@ const UseFirebase = () => {
           const destination=location?.state?.from ||'/';
           history.replace(destination);
           setError('');
+    })
+          .catch((error) => {
+          setError(error.message);                  
+        })
+        .finally(()=>{
+        setIsLoading(false);
   })
-  .catch((error) => {
-    setError(error.message);
-  })
-.finally(()=>{
-  setIsLoading(false);
-})
     }
 
     const signInWithGoogle=(location,history)=>{
