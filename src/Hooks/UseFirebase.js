@@ -8,6 +8,7 @@ const UseFirebase = () => {
     const [user,setUser]=useState({});
     const [isLoading,setIsLoading]=useState(true);
     const [error,setError]=useState('');
+    const [admin,setAdmin]=useState(false);
 
     const auth = getAuth();
     const GoogleProvider = new GoogleAuthProvider();
@@ -52,6 +53,12 @@ const UseFirebase = () => {
              setIsLoading(false);
            })
     }
+// admin secure panel
+    useEffect(()=>{
+      fetch(`http://localhost:5000/users/${user.email}`)
+      .then(res=>res.json())
+      .then(data=>setAdmin(data.admin))
+    },[user.email])
 
     const loginUser=(email,password,location,history)=>{
          setIsLoading(true);
@@ -89,12 +96,10 @@ const UseFirebase = () => {
 
     // observer user state
     useEffect(()=>{
-
   const unsubscribed=onAuthStateChanged(auth, (user) => {
   if (user) {
      setUser(user);
       } 
-
   else {
      setUser({})
   }
@@ -119,6 +124,7 @@ const UseFirebase = () => {
 
     return  {
         user,
+        admin,
         registerUser,
         logOut,
         loginUser,
