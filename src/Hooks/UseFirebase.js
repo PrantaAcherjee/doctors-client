@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import initializeFirebasae from '../Pages/Login/Firebase/Firebase.init';
 import { getAuth, createUserWithEmailAndPassword ,signOut,onAuthStateChanged,signInWithEmailAndPassword ,  signInWithPopup,GoogleAuthProvider,updateProfile,getIdToken} from "firebase/auth";
 
@@ -111,7 +111,7 @@ const UseFirebase = () => {
     setIsLoading(false);
     });
     return ()=>unsubscribed;
-    },[])
+    },[auth])
 
 //save user to data base
     const saveUser=(email,displayName,method)=>{
