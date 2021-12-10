@@ -44,7 +44,7 @@ const BookingModal=({openBooking,handleBookingClose,booking,date,setBookingSucce
     date:date.toLocaleDateString()
   }
   //send data
-    fetch('http://localhost:5000/appointments',{
+    fetch('https://floating-reaches-07420.herokuapp.com/appointments',{
     method:'POST',
     headers:{
       'content-type':'application/json'

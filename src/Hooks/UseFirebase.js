@@ -56,7 +56,7 @@ const UseFirebase = () => {
     }
 // admin secure panel
     useEffect(()=>{
-      fetch(`http://localhost:5000/users/${user.email}`)
+      fetch(`https://floating-reaches-07420.herokuapp.com/users/${user.email}`)
       .then(res=>res.json())
       .then(data=>setAdmin(data.admin))
     },[user.email])
@@ -116,7 +116,7 @@ const UseFirebase = () => {
 //save user to data base
     const saveUser=(email,displayName,method)=>{
       const user={email,displayName};
-      fetch('http://localhost:5000/users',{
+      fetch('https://floating-reaches-07420.herokuapp.com/users',{
         method:method,
         headers:{
             'content-type':'application/json'

@@ -13,7 +13,7 @@ const MakeAdmin = () => {
     const handleAdminSubmit= e =>{
         const user={email};
         e.target.reset();
-        fetch('http://localhost:5000/users/admin',{
+        fetch('https://floating-reaches-07420.herokuapp.com/users/admin',{
             method:'PUT',
             headers:{
                 'authorization':`Bearer ${token}`,
