@@ -14,7 +14,7 @@
     const [processing,setProcessing]=useState(false);
 
     useEffect(()=>{
-      fetch('http://localhost:5000/create-payment-intent',{
+      fetch('https://floating-reaches-07420.herokuapp.com/create-payment-intent',{
         method:'POST',
         headers:{
           'content-type':'application/json'
@@ -43,6 +43,7 @@
         if(error){
           setError(error.message)
           setSuccess('')
+          setProcessing(false)
         }
         else{
           setError('')
@@ -78,7 +79,7 @@
           created:paymentIntent.created,
           last4:paymentMethod.card.last4,
           }
-          const url=`http://localhost:5000/appointments/${_id}`;
+          const url=`https://floating-reaches-07420.herokuapp.com/appointments/${_id}`;
           fetch(url,{
             method:'PUT',
             headers:{
