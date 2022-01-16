@@ -21,14 +21,13 @@ import {
   Link,
   useRouteMatch
 } from "react-router-dom";
-
- 
 import { Button } from '@mui/material';
 import DashboardHome from '../DashboardHome/DashboardHome';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import AddDocotor from '../AddDoctor/AddDocotor';
 import useAuth from '../../../Hooks/useAuth';
 import AdminRoute from '../../Login/Login/AdminRoute/AdminRoute';
+import Payment from './../../Payment/Payment';
 
 
 const drawerWidth = 200;
@@ -142,6 +141,9 @@ function Dashboard(props) {
         <Switch>
         <Route exact path={path}>
           <DashboardHome></DashboardHome>
+        </Route>
+        <Route path={`${path}/payment/:appointmentId`}>
+        <Payment></Payment>
         </Route>
         <AdminRoute path={`${path}/makeAdmin`}>
           <MakeAdmin></MakeAdmin> 
