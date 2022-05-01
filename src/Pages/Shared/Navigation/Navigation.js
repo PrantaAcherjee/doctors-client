@@ -18,17 +18,10 @@ const Navigation = () => {
             <Box sx={{ flexGrow: 1 }}>
        <AppBar position="static">
         <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Doctor's Portal
+          <Typography variant="h6">Dentist's Portal</Typography>
+          
+          <Typography  component="div" sx={{ flexGrow: 1 }}>
+             
           </Typography>
           <Link style={{textDecoration:'none',color:'white'}} to="/appointment">
             <Button color="inherit">Appointment</Button>
