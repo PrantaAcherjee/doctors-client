@@ -21,7 +21,7 @@ const Testimonial = () => {
       <Box sx={{ width: '100%' }}>
       <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
         <Grid xs={12} md={4}>
-           <Paper style={{padding:'1.5rem'}}>
+           <Paper style={{padding:'1.5rem',margin:'2rem'}}>
             
             <Typography>
              Get unbiased ratings and reviews for 8500+ products and services from Consumer Reports, plus trusted advice and in-depth reporting on what matters most.
@@ -38,7 +38,7 @@ const Testimonial = () => {
            </Paper>
         </Grid>
         <Grid xs={12} md={4}>
-        <Paper style={{padding:'1.5rem'}}>
+        <Paper style={{padding:'1.5rem',margin:'2rem'}}>
         
         <Typography>
          Get unbiased ratings and reviews for 8500+ products and services from Consumer Reports, plus trusted advice and in-depth reporting on what matters most.
@@ -53,7 +53,7 @@ const Testimonial = () => {
         </Paper>
         </Grid>
         <Grid xs={12} md={4}>
-        <Paper style={{padding:'1.5rem'}}>
+        <Paper style={{padding:'1.5rem',margin:'2rem'}}>
         
          <Typography>
          Get unbiased ratings and reviews for 8500+ products and services from Consumer Reports, plus trusted advice and in-depth reporting on what matters most.
