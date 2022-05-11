@@ -25,16 +25,16 @@ const AppointmentBanner = () => {
                 alignItems:'center',
                 textAlign:'left'}}>
             <Box>
-            <Typography variant="h6" sx={{mb:5}} style={{color:'#5CE7ED'}}>
+            <Typography variant="h6" sx={{mb:5}} style={{color:'#5CE7ED',margin:'0 0.5rem'}}>
                 Appointment
             </Typography>
-            <Typography variant="h4" sx={{my:5}} style={{color:'white'}}>
+            <Typography variant="h4" sx={{my:5}} style={{color:'white',margin:'0 0.5rem'}}>
               Make an  appointment Today
             </Typography>
-            <Typography variant="h4" style={{color:'white',fontSize:14,fontWeight:300}}>
+            <Typography variant="h4" style={{color:'white',fontSize:14,fontWeight:300,margin:'0 0.5rem'}}>
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit tempore, saepe iure mollitia temporibus quibusdam. Rem debitis nostrum ab alias.
             </Typography>
-            <Button variant="contained" style={{backgroundColor:"#5CE7ED",margin:'1.5rem 0'}}>Learn More</Button>
+            <Button variant="contained" style={{backgroundColor:"#5CE7ED",margin:'1.5rem 0.5rem'}}>Learn More</Button>
             </Box>
             </Grid>
         </Grid>

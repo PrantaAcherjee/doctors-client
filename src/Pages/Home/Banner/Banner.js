@@ -1,8 +1,8 @@
 import React from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import chair from '../../../images/chair.png'
-import bg from '../../../images/bg.png'
+import chair from '../../../images/chair.png';
+import bg from '../../../images/bg.png';
 import { Button, Typography ,Container} from '@mui/material';
 
 const bannerBg={
@@ -30,8 +30,8 @@ const Banner = () => {
                        <Button variant="contained" style={{backgroundColor:"#5CE7ED"}}>Get appointment</Button>
                   </Box>
                  </Grid>
-                 <Grid item xs={4} md={6} style={verticalCenter}>
-                     <img style={{width:'350px'}} src={chair} alt="" />
+                 <Grid item xs={12} md={6} style={verticalCenter}>
+                     <img style={{width:'100%'}} src={chair} alt="" />
                  </Grid>
              </Grid>
          </Container>
