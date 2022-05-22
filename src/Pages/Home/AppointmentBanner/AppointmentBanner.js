@@ -4,6 +4,7 @@ import Grid from '@mui/material/Grid';
 import doctor from '../../../images/doctor.png'
 import bg from '../../../images/appointment-bg.png'
 import { Button, Typography } from '@mui/material';
+ 
 const appoinmentBanner={
     background:`url(${bg})`,
     marginTop:175,
@@ -27,7 +28,7 @@ const AppointmentBanner = () => {
             <Box>
             <Typography variant="h6" sx={{mb:5}} style={{color:'#5CE7ED',margin:'0 0.5rem'}}>
                 Appointment
-            </Typography>
+            </Typography>            
             <Typography variant="h4" sx={{my:5}} style={{color:'white',margin:'0 0.5rem'}}>
               Make an  appointment Today
             </Typography>
