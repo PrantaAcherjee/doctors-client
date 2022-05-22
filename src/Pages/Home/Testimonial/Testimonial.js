@@ -27,7 +27,7 @@ const Testimonial = () => {
              Get unbiased ratings and reviews for 8500+ products and services from Consumer Reports, plus trusted advice and in-depth reporting on what matters most.
             </Typography>
             <div style={{display:'flex',justifyContent:'space-evenly',alignItems:'center',marginTop:'1.5rem'}}>
-              <div><img src={people1}/></div>
+              <div><img src={people1} alt=""/></div>
                <div>
                <Typography>Henry Ford</Typography>
                <Typography>California</Typography>
@@ -44,7 +44,7 @@ const Testimonial = () => {
          Get unbiased ratings and reviews for 8500+ products and services from Consumer Reports, plus trusted advice and in-depth reporting on what matters most.
         </Typography>
         <div style={{display:'flex',justifyContent:'space-evenly',alignItems:'center',marginTop:'1.5rem'}}>
-              <div><img src={people2}/></div>
+              <div><img src={people2} alt=""/></div>
                <div>
                <Typography>Angel Ford</Typography>
                <Typography>California</Typography>
@@ -59,7 +59,7 @@ const Testimonial = () => {
          Get unbiased ratings and reviews for 8500+ products and services from Consumer Reports, plus trusted advice and in-depth reporting on what matters most.
          </Typography>
          <div style={{display:'flex',justifyContent:'space-evenly',alignItems:'center',marginTop:'1.5rem'}}>
-              <div><img src={people3}/></div>
+              <div><img src={people3} alt="" /></div>
                <div>
                <Typography>Somalia Ford</Typography>
                <Typography>California</Typography>

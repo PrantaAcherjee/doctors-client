@@ -11,7 +11,7 @@ const Treatment = () => {
         <Box sx={{ width: '100%' }}>
       <Grid style={{display:'flex',justifyContent:"center",alignItems:'center'}} container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
         <Grid xs={12} md={6}>
-        <img style={{height:'90%',width:'90%',borderRadius:'20px'}} src={treatment} />  
+        <img style={{height:'90%',width:'90%',borderRadius:'20px'}} src={treatment} alt="" />  
         </Grid>
         <Grid xs={12} md={6}>
         <Typography variant='h3' style={{margin:'4rem 0'}}>

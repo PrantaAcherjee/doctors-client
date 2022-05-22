@@ -44,6 +44,7 @@ const Footer = () => {
                        <Button style={{marginTop:'2px'}} variant="contained">Send us</Button>
                  </Grid>
              </Grid>
+             <Typography style={{marginTop:'4rem',color:'gray'}}>&copy; ALL Right Reserved by Dentist's Portal-2030</Typography>
          </Container>
     );
 };

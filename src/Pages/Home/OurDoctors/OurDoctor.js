@@ -14,13 +14,13 @@ const OurDoctor = () => {
         <Box sx={{ width: '100%' }}>
       <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
         <Grid xs={12} md={4}>
-            <img style={{height:'100%',width:'100%'}} src={doctor} />
+            <img style={{height:'100%',width:'100%'}} src={doctor} alt=""/>
         </Grid>
         <Grid xs={12} md={4}>
-        <img style={{height:'100%',width:'100%'}} src={doctor} />
+        <img style={{height:'100%',width:'100%'}} src={doctor} alt=""/>
         </Grid>
         <Grid xs={12} md={4}>
-        <img style={{height:'100%',width:'100%'}} src={doctor} />
+        <img style={{height:'100%',width:'100%'}} src={doctor} alt=""/>
         </Grid>
       </Grid>
     </Box>
