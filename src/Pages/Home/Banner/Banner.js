@@ -21,10 +21,9 @@ const Banner = () => {
              <Grid container spacing={2}>
                  <Grid item style={{...verticalCenter,textAlign:'left'}} xs={12} md={6}>
                   <Box>
-                  <Typography variant="h3">
+                  <Typography className='head-title' variant="h3">
                        Your New Smile <br />
                        Starts Here
-
                        </Typography> 
                        <Typography variant='h6' sx={{fontSize:13,color:'gray',fontWeight:300,my:3}}>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores ratione odit sed a quam laudantium debitis aliquid iste provident animi tempore, doloribus possimus itaque officiis!

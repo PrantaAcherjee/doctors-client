@@ -21,7 +21,7 @@ const Treatment = () => {
         Description of the eight EQF levels. Each of the 8 levels of the EQF is defined by a set of descriptors indicating the learning outcomes relevant to.Description of the eight EQF levels. Each of the 8 levels of the EQF is defined by a set of descriptors indicating the learning outcomes relevant to.Description of the eight EQF levels. Each of the 8 levels of the EQF is defined by a set of descriptors indicating the learning outcomes relevant to.Description of the eight EQF levels. Each of the 8 levels of the EQF is defined by a set of descriptors indicating the learning outcomes relevant to.
         </p>
         <br/>
-        <Button style={{background:'cyan',marginTop:'4rem'}} variant='contained'>Learn More</Button>
+        <Button style={{background:'cyan',marginTop:'2.5rem',width:'50%'}} variant='contained'>Learn More</Button>
         </Grid>        
       </Grid>
      </Box>
