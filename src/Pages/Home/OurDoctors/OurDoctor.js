@@ -8,8 +8,8 @@ const OurDoctor = () => {
   return (
     <div>
      <Container style={{marginBottom:'3rem'}}>
-        <Typography style={{color:'cyan',fontSize:'24px'}}>
-                Our Doctors
+        <Typography variant='h4' sx={{fontWeight:600,m:4}}>
+           Our Doctors
         </Typography>
         <Box sx={{ width: '100%' }}>
       <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>

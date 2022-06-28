@@ -12,10 +12,7 @@ const Testimonial = () => {
   return (
         
       <Container style={{marginBottom:'3rem'}}>
-      <Typography style={{color:'cyan',fontSize:'20px',margin:'20px 0px',textAlign:'left'}}>
-        TESTIMONIAL
-      </Typography>
-      <Typography variant='h4' style={{marginBottom:'40px',textAlign:'left'}}>
+      <Typography variant='h4' style={{margin:'40px 0',textAlign:'left'}} sx={{fontWeight:600,m:4}}>
          What's Our Patients Says !
       </Typography>
       <Box sx={{ width: '100%' }}>

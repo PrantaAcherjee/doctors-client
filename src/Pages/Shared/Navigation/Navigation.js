@@ -12,7 +12,7 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
+
 
 const Navigation = () => {
   const {user,logOut}=useAuth();
@@ -25,12 +25,11 @@ const Navigation = () => {
     setAnchorElUser(null);
   };
     return (   
-    <AppBar position="fixed">
+    <AppBar position="fixed" style={{background:'rgb(18, 187, 187)'}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
           <Typography
-            variant="h6"
+            variant="h5"
             noWrap
             component="a"
             href="/"
@@ -39,7 +38,7 @@ const Navigation = () => {
               display: { xs: 'none', md: 'flex' },
               fontFamily: 'monospace',
               fontWeight: 700,
-              letterSpacing: '.2rem',
+              letterSpacing: '.1rem',
               color: 'inherit',
               textDecoration: 'none',
             }}
@@ -47,8 +46,6 @@ const Navigation = () => {
             Dentist's Portal
           </Typography>
 
-           
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
           <Typography
             variant="h5"
             noWrap
@@ -92,15 +89,18 @@ const Navigation = () => {
               onClose={handleCloseUserMenu}
               >
                <MenuItem onClick={handleCloseUserMenu}>
-                <Link style={{textDecoration:'none',  color:'blue'}} to="/appointment">
+                 <Box>
+                 <NavLink style={{textDecoration:'none',  color:'blue'}} to="/appointment">
                 <Button color="inherit">Appointment</Button>
-                </Link>
-              {
+                </NavLink>
+                 </Box>
+               {
                 user?.email?
                <Box>           
                <NavLink style={{textDecoration:'none',color:'blue'}} to="/dashboard">
                <Button color="inherit">Dashboard</Button>
                </NavLink>
+                
                <Button onClick={logOut} color="inherit">Logout</Button>
                </Box>
                :

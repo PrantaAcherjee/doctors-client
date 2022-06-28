@@ -14,7 +14,7 @@ const Treatment = () => {
         <img style={{height:'90%',width:'90%',borderRadius:'20px'}} src={treatment} alt="" />  
         </Grid>
         <Grid xs={12} md={6}>
-        <Typography variant='h3' style={{margin:'4rem 0'}}>
+        <Typography variant='h3' style={{margin:'4rem 0',fontWeight:'700'}}>
           Exceptional Dental Care,<br/> On Your Terms
         </Typography>
         <p style={{letterSpacing:'0.3px',textAlign:'justify',paddingLeft:'1rem',color:'gray',lineHeight:'28px'}}>
